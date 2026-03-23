@@ -4,7 +4,7 @@ import { stat } from "node:fs/promises";
 import net from "node:net";
 import path from "node:path";
 
-const port = Number(process.env.FRONTEND_PORT);
+const port = Number(process.env.FRONTEND_PORT || process.env.PORT);
 const host = process.env.FRONTEND_HOST || "0.0.0.0";
 const distPath = path.resolve(process.cwd(), "frontend", "dist");
 
@@ -58,7 +58,7 @@ function getContentType(filePath) {
 
 async function run() {
   if (!isValidPort(port)) {
-    console.error("[frontend] Missing or invalid FRONTEND_PORT environment variable.");
+    console.error("[frontend] Missing or invalid FRONTEND_PORT/PORT environment variable.");
     process.exit(1);
   }
 

@@ -1,3 +1,7 @@
+const path = require("node:path");
+
+const envFilePath = path.resolve(__dirname, ".env");
+
 module.exports = {
   apps: [
     {
@@ -10,7 +14,7 @@ module.exports = {
       watch: false,
       max_restarts: 10,
       exp_backoff_restart_delay: 200,
-      env_file: ".env",
+      env_file: envFilePath,
       env: {
         NODE_ENV: "production",
       },
@@ -25,7 +29,7 @@ module.exports = {
       watch: false,
       max_restarts: 10,
       exp_backoff_restart_delay: 200,
-      env_file: ".env",
+      env_file: envFilePath,
       env: {
         NODE_ENV: "production",
       },
