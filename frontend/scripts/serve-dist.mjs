@@ -3,10 +3,26 @@ import { createReadStream, existsSync } from "node:fs";
 import { stat } from "node:fs/promises";
 import net from "node:net";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
+
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(scriptDir, "..", "..");
+
+const rootEnvPath = path.join(projectRoot, ".env");
+const workspaceEnvPath = path.join(projectRoot, "frontend", ".env");
+
+if (existsSync(rootEnvPath)) {
+  dotenv.config({ path: rootEnvPath });
+}
+
+if (existsSync(workspaceEnvPath)) {
+  dotenv.config({ path: workspaceEnvPath });
+}
 
 const port = Number(process.env.FRONTEND_PORT || process.env.PORT);
 const host = process.env.FRONTEND_HOST || "0.0.0.0";
-const distPath = path.resolve(process.cwd(), "frontend", "dist");
+const distPath = path.join(projectRoot, "frontend", "dist");
 
 function isValidPort(value) {
   return Number.isInteger(value) && value > 0 && value <= 65535;
