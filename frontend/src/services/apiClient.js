@@ -12,17 +12,29 @@ class ApiError extends Error {
 async function request(path, options) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
       ...(options?.headers || {}),
     },
     ...options,
   });
 
-  const data = await response.json().catch(() => ({}));
+  const contentType = response.headers.get("content-type") || "";
+  const isJson = contentType.includes("application/json");
+  const data = isJson ? await response.json().catch(() => ({})) : null;
 
   if (!response.ok) {
     const message = data?.message || "Request failed";
     throw new ApiError(message, response.status);
+  }
+
+  // Guard against reverse-proxy fallbacks returning HTML with HTTP 200.
+  if (!isJson) {
+    throw new ApiError("Unexpected API response format.", response.status);
+  }
+
+  if (data?.success === false) {
+    throw new ApiError(data?.message || "Request failed", response.status);
   }
 
   return data;
