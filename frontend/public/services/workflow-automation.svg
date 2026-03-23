@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow automation preview</title>
+  <desc id="desc">Connected process nodes with arrows representing automated workflows</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbf5"/>
+      <stop offset="100%" stop-color="#e6f5ed"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" rx="28" fill="url(#bg)"/>
+  <rect x="68" y="72" width="664" height="376" rx="20" fill="#ffffff" stroke="#d7ebde" stroke-width="4"/>
+
+  <g fill="none" stroke="#1d4ed8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M206 172h116"/>
+    <path d="M450 172h116"/>
+    <path d="M206 320h116"/>
+    <path d="M450 320h116"/>
+    <path d="M386 206v76"/>
+  </g>
+
+  <g fill="#1d4ed8">
+    <path d="M312 162l20 10-20 10z"/>
+    <path d="M556 162l20 10-20 10z"/>
+    <path d="M312 310l20 10-20 10z"/>
+    <path d="M556 310l20 10-20 10z"/>
+    <path d="M376 272l10 20 10-20z"/>
+  </g>
+
+  <g>
+    <rect x="116" y="128" width="90" height="88" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+    <rect x="356" y="128" width="90" height="88" rx="14" fill="#eefcf3" stroke="#bbf7d0"/>
+    <rect x="596" y="128" width="90" height="88" rx="14" fill="#fff7ed" stroke="#fed7aa"/>
+    <rect x="116" y="276" width="90" height="88" rx="14" fill="#f5f3ff" stroke="#ddd6fe"/>
+    <rect x="356" y="276" width="90" height="88" rx="14" fill="#f0fdfa" stroke="#99f6e4"/>
+    <rect x="596" y="276" width="90" height="88" rx="14" fill="#fef2f2" stroke="#fecaca"/>
+  </g>
+
+  <g fill="#334155">
+    <circle cx="160" cy="172" r="14"/>
+    <rect x="145" y="196" width="30" height="8" rx="4"/>
+
+    <rect x="382" y="153" width="38" height="38" rx="8"/>
+    <path d="M388 172h26" stroke="#ffffff" stroke-width="4"/>
+
+    <path d="M631 149c10 0 18 8 18 18s-8 18-18 18-18-8-18-18 8-18 18-18z"/>
+    <path d="M620 196h22" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+
+    <path d="M148 322h24" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 310v24" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+
+    <rect x="372" y="304" width="58" height="10" rx="5"/>
+    <rect x="372" y="322" width="42" height="10" rx="5"/>
+
+    <path d="M616 315h30" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+    <path d="M616 333h20" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

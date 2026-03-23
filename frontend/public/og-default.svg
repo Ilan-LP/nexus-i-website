@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Nexus-I preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f2f2f2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="58" y="58" width="1084" height="514" rx="22" fill="#ffffff" stroke="#e5e5e5" stroke-width="2" />
+  <circle cx="94" cy="94" r="8" fill="#ff5f57" />
+  <circle cx="118" cy="94" r="8" fill="#febc2e" />
+  <circle cx="142" cy="94" r="8" fill="#28c840" />
+  <text x="92" y="220" fill="#111111" font-size="72" font-family="Sora, Arial, sans-serif" font-weight="700">Nexus-I</text>
+  <text x="92" y="286" fill="#4d4d4d" font-size="34" font-family="Manrope, Arial, sans-serif">Le code au service de vos idees</text>
+  <text x="92" y="344" fill="#5f5f5f" font-size="26" font-family="Manrope, Arial, sans-serif">Websites and workflow automation for growing businesses</text>
+</svg>

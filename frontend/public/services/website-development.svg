@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Website development preview</title>
+  <desc id="desc">Stylized browser window and code layout representing website development</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f7fb"/>
+      <stop offset="100%" stop-color="#e7eef8"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2f6feb"/>
+      <stop offset="100%" stop-color="#4f8dff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" rx="28" fill="url(#bg)"/>
+  <rect x="70" y="70" width="660" height="380" rx="18" fill="#ffffff" stroke="#d7e2f1" stroke-width="4"/>
+  <rect x="70" y="70" width="660" height="46" rx="18" fill="#ecf2fb"/>
+  <circle cx="102" cy="93" r="8" fill="#f87171"/>
+  <circle cx="126" cy="93" r="8" fill="#fbbf24"/>
+  <circle cx="150" cy="93" r="8" fill="#34d399"/>
+  <rect x="200" y="84" width="320" height="18" rx="9" fill="#dbe7f8"/>
+
+  <rect x="102" y="142" width="596" height="130" rx="16" fill="url(#hero)"/>
+  <rect x="132" y="174" width="260" height="16" rx="8" fill="#cfe0ff" opacity="0.9"/>
+  <rect x="132" y="200" width="190" height="12" rx="6" fill="#cfe0ff" opacity="0.75"/>
+
+  <rect x="102" y="296" width="248" height="126" rx="14" fill="#f6f9ff" stroke="#d9e5f7"/>
+  <rect x="126" y="324" width="200" height="10" rx="5" fill="#c4d7f3"/>
+  <rect x="126" y="346" width="172" height="10" rx="5" fill="#c4d7f3"/>
+  <rect x="126" y="368" width="136" height="10" rx="5" fill="#c4d7f3"/>
+
+  <rect x="372" y="296" width="326" height="126" rx="14" fill="#0f172a"/>
+  <rect x="400" y="324" width="178" height="8" rx="4" fill="#60a5fa"/>
+  <rect x="400" y="344" width="220" height="8" rx="4" fill="#22d3ee"/>
+  <rect x="400" y="364" width="152" height="8" rx="4" fill="#86efac"/>
+  <rect x="400" y="384" width="190" height="8" rx="4" fill="#f9a8d4"/>
+</svg>

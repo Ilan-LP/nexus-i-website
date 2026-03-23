@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Simple showcase website preview</title>
+  <desc id="desc">Clean one-page layout with hero and short content sections</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff9f3"/>
+      <stop offset="100%" stop-color="#ffefd8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" rx="28" fill="url(#bg)"/>
+  <rect x="90" y="66" width="620" height="388" rx="22" fill="#ffffff" stroke="#fde6c5" stroke-width="4"/>
+  <rect x="90" y="66" width="620" height="44" rx="22" fill="#fff2df"/>
+  <circle cx="120" cy="88" r="7" fill="#fb7185"/>
+  <circle cx="142" cy="88" r="7" fill="#facc15"/>
+  <circle cx="164" cy="88" r="7" fill="#4ade80"/>
+
+  <rect x="124" y="136" width="552" height="130" rx="16" fill="#ffe6bf"/>
+  <rect x="154" y="172" width="220" height="16" rx="8" fill="#b45309" opacity="0.8"/>
+  <rect x="154" y="198" width="180" height="12" rx="6" fill="#b45309" opacity="0.55"/>
+  <rect x="154" y="224" width="130" height="12" rx="6" fill="#b45309" opacity="0.35"/>
+
+  <rect x="124" y="292" width="170" height="126" rx="14" fill="#fffbeb" stroke="#fde68a"/>
+  <rect x="315" y="292" width="170" height="126" rx="14" fill="#fffbeb" stroke="#fde68a"/>
+  <rect x="506" y="292" width="170" height="126" rx="14" fill="#fffbeb" stroke="#fde68a"/>
+
+  <g fill="#92400e" opacity="0.8">
+    <rect x="146" y="318" width="126" height="10" rx="5"/>
+    <rect x="146" y="340" width="106" height="10" rx="5"/>
+    <rect x="146" y="362" width="86" height="10" rx="5"/>
+
+    <rect x="337" y="318" width="126" height="10" rx="5"/>
+    <rect x="337" y="340" width="106" height="10" rx="5"/>
+    <rect x="337" y="362" width="86" height="10" rx="5"/>
+
+    <rect x="528" y="318" width="126" height="10" rx="5"/>
+    <rect x="528" y="340" width="106" height="10" rx="5"/>
+    <rect x="528" y="362" width="86" height="10" rx="5"/>
+  </g>
+</svg>

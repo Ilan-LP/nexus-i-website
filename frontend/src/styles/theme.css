@@ -1,0 +1,6 @@
+:root {
+  --ink-color: #111111;
+  --surface-background: radial-gradient(circle at top, #fafafa 0%, #ffffff 56%);
+  color: var(--ink-color);
+  background-color: #ffffff;
+}

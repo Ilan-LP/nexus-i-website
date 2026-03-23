@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background: var(--surface-background);
+  color: var(--ink-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--ink-color);
+  color: #ffffff;
+}
+
+@layer utilities {
+  .container-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-24;
+  }
+
+  .focus-ring {
+    @apply outline-none ring-offset-2 ring-offset-white focus-visible:ring-2 focus-visible:ring-black/40;
+  }
+}
