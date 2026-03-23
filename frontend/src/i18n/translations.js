@@ -225,7 +225,7 @@ export const fr = {
       successMeeting: "Merci, votre demande de rendez-vous a bien été envoyée",
       error: "Une erreur est survenue. Merci de réessayer dans quelques instants",
     },
-    replyTime: "Temps de réponse",
+    replyTime: "Délai de réponse",
     replyText: "En général sous 24h, avec une première orientation technique",
   },
   error: {
