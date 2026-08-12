@@ -88,8 +88,10 @@ app.use("/api", contactRoutes);
 app.use("/api/v1", contactRoutes);
 
 if (serveFrontend && fs.existsSync(distPath)) {
-  // Fallback to index.html for client-side routing
-  app.get("*", (req, res) => {
+  // Fallback to index.html for client-side routing.
+  // Express 5 (path-to-regexp v8) requires a named splat parameter,
+  // a bare "*" throws "Missing parameter name" at startup.
+  app.get("/*splat", (req, res) => {
     res.sendFile(path.join(distPath, "index.html"));
   });
 }
