@@ -99,3 +99,48 @@ npm run preview
 - Ne jamais commit les fichiers `.env` avec des secrets.
 - Garder uniquement les exemples (`.env.example`) dans Git.
 - Si le port est deja pris, changer `FRONTEND_PORT` et/ou `BACKEND_PORT` dans les `.env`.
+
+## 7. Deploiement en production (VPS + Docker + Caddy)
+
+Le projet est packagé en un seul container Docker : l'image build le frontend
+(Vite) puis lance le backend Express, qui sert `frontend/dist` directement
+(`SERVE_FRONTEND=true`). Pas de port publié sur l'hôte, le container rejoint
+le réseau externe `caddy_net` déjà utilisé par le reste de la stack.
+
+### 7.1 Sur le VPS
+
+```bash
+sudo mkdir -p /opt/nexus-i-website
+sudo chown $USER:$USER /opt/nexus-i-website
+cd /opt/nexus-i-website
+git clone <url-de-ce-repo> .
+
+cp backend/.env.example backend/.env
+nano backend/.env   # remplir SMTP_*, CONTACT_EMAIL, CORS_ALLOWED_ORIGINS, BACKEND_PORT=8080, ...
+
+docker compose up -d --build
+```
+
+`CORS_ALLOWED_ORIGINS` doit contenir le(s) domaine(s) public(s) réel(s) du
+site (ex: `https://nexus-i.fr`), pas `localhost`.
+
+### 7.2 Caddyfile
+
+Ajouter un bloc pointant vers le nom du container sur `caddy_net` :
+
+```
+nexus-i.fr {
+    reverse_proxy nexus-i-website:8080
+}
+```
+
+Puis recharger Caddy (`caddy reload` ou `docker exec caddy caddy reload ...`
+selon comment Caddy est lui-même déployé).
+
+### 7.3 Mise à jour
+
+```bash
+cd /opt/nexus-i-website
+git pull
+docker compose up -d --build
+```
