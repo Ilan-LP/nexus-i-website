@@ -1,5 +1,5 @@
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const phoneRegex = /^[+()\d\s.-]{6,30}$/;
+const phoneRegex = /^[+()\d .-]{6,30}$/;
 
 const LIMITS = {
   name: 120,
@@ -11,6 +11,12 @@ const LIMITS = {
 
 function sanitize(value) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+// For fields that end up in email headers (e.g. the subject line), strip
+// CR/LF/TAB so a crafted value can't inject extra headers.
+function sanitizeSingleLine(value) {
+  return sanitize(value).replace(/[\r\n\t]+/g, " ");
 }
 
 function exceedsMaxLength(value, max) {
@@ -26,7 +32,7 @@ export function validateContactRequest(req, res, next) {
     return res.status(400).json({ success: false, message: "Invalid contact payload." });
   }
 
-  const name = sanitize(req.body.name);
+  const name = sanitizeSingleLine(req.body.name);
   const email = sanitize(req.body.email);
   const message = sanitize(req.body.message);
   const website = sanitize(req.body.website);
@@ -59,7 +65,7 @@ export function validateMeetingRequest(req, res, next) {
     return res.status(400).json({ success: false, message: "Invalid meeting payload." });
   }
 
-  const name = sanitize(req.body.name);
+  const name = sanitizeSingleLine(req.body.name);
   const phone = sanitize(req.body.phone);
   const preferredTime = sanitize(req.body.preferredTime);
   const website = sanitize(req.body.website);

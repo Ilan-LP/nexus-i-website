@@ -1,0 +1,15 @@
+services:
+  nexus-i-website:
+    build: .
+    container_name: nexus-i-website
+    restart: unless-stopped
+    env_file:
+      - backend/.env
+    networks:
+      - caddy_net
+    # Pas de "ports:" exposé sur l'hôte : uniquement accessible via Caddy
+    # sur le réseau docker partagé, comme le reste de la stack.
+
+networks:
+  caddy_net:
+    external: true
